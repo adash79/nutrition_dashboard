@@ -233,7 +233,7 @@ tr.highlighted td{background:rgba(28,171,226,0.08)}
 <header>
   <div class="header-left">
     <div class="header-badge">ABP Analytics · Multi-State · Nutrition Deprivation Index</div>
-    <h1 id="pageTitle">Prioritising <span>Nutrition</span><br>from the Aspirational Blocks</h1>
+    <h1 id="pageTitle">Prioritising <span>Nutrition</span><br>in the Aspirational Blocks of Bihar</h1>
     <p class="header-meta" style="display:flex;align-items:center;gap:20px"><span>Aspirational Blocks Programme · Data Period: Sep 2025 · <span id="blockCountMeta">484</span> Aspirational Blocks (India) · 10 Nutrition KPIs</span></p>
   </div>
   <div class="header-right">
@@ -432,7 +432,7 @@ dep_i = 100 − normalised_i  [if lower  = worse]</div>
 <div id="tab-csr" class="tab-content">
   <div class="csr-hero">
     <h2 style="font-family:var(--font-display);font-size:22px;font-weight:400;margin-bottom:10px">CSR &amp; Corporate Presence Mapping</h2>
-    <p style="font-size:13px;color:rgba(255,255,255,0.8);line-height:1.7;max-width:880px">CPSEs, private corporates and public sector banks active in Aspirational Block districts — sourced from DPE guidelines, company CSR reports, and NITI Aayog ABP data. Select a state and district to explore relevant CSR presence.</p>
+    <p style="font-size:13px;color:rgba(255,255,255,0.8);line-height:1.7;max-width:880px">CPSEs, Corporates and Public Sector Banks active in Aspirational Block/Districts are sourced from publicly available documents, company CSR reports. Select a state and district to explore relevant CSR presence.</p>
   </div>
 
   <!-- Independent state + district selectors for CSR tab -->
@@ -497,7 +497,7 @@ dep_i = 100 − normalised_i  [if lower  = worse]</div>
 
   <!-- Disclaimer -->
   <div style="background:rgba(28,171,226,0.05);border:1px solid var(--border);border-radius:8px;padding:14px 18px;font-size:11px;color:var(--text-muted);font-family:var(--font-mono);margin-top:20px;line-height:1.9">
-    <strong style="color:var(--text)">⚠ Disclaimer:</strong> Corporate and CPSE CSR presence data compiled from publicly available sources including DPE guidelines on Aspirational Districts, company sustainability/annual reports (FY2023-24), MCA CSR-1 filings, NITI Aayog ABP documentation, and CSRBox records. Data compilation was assisted by AI-based search, and entries should be independently validated before use in official communications or proposals. Sources: <a href="https://dpe.gov.in/gallery/transformation-aspirational-districts-csr-initiatives-cpses" target="_blank" style="color:var(--cyan)">DPE — CPSE CSR in Aspirational Districts</a> · <a href="https://niti.gov.in/aspirational-districts-programme" target="_blank" style="color:var(--cyan)">NITI Aayog ABP</a> · <a href="https://www.mca.gov.in" target="_blank" style="color:var(--cyan)">MCA CSR Portal</a> · <a href="https://csrbox.org" target="_blank" style="color:var(--cyan)">CSRBox</a>
+    <strong style="color:var(--text)">⚠ Disclaimer:</strong> Corporate and CPSE CSR presence data compiled from publicly available sources, including DPE guidelines, company sustainability/annual reports/CSR reports, CSR filings, and CSRBox records. Data compilation was assisted by AI-based search, and must be independently validated before use.
   </div>
 </div>
 
@@ -1093,7 +1093,7 @@ function populateStateSelector(){
 function changeState(s){
   initState(s);
   document.getElementById('stateInfo').textContent=RAW_DATA.length+' blocks · '+[...new Set(RAW_DATA.map(d=>d.district))].length+' districts';
-  document.querySelector('h1').innerHTML=currentState+' Block <span>Nutrition</span><br>Deprivation Dashboard';
+  document.querySelector('h1').innerHTML='Prioritising <span>Nutrition</span><br>in the Aspirational Blocks of '+currentState;
   renderTop5(); renderInsights();
   filteredData=[...RAW_DATA]; renderTable(); renderHeatmap();
   populateDistrictFilter();
